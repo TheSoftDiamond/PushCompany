@@ -9,14 +9,19 @@ using UnityEngine;
 
 namespace PushCompany
 {
-    [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
+    [BepInPlugin(GUID, NAME, VERSION)]
     public class PushCompanyBase : BaseUnityPlugin
     {
         public static readonly Lazy<PushCompanyBase> Instance = new Lazy<PushCompanyBase>(() => new PushCompanyBase());
         public static GameObject pushPrefab;
         public ManualLogSource mls;
 
-        private readonly Harmony harmony = new Harmony(PluginInfo.PLUGIN_GUID);
+        private const string GUID = "SoftDiamond.PushCompany";
+        private const string NAME = "PushCompany";
+        private const string VERSION = "1.0.0";
+
+
+        private readonly Harmony harmony = new Harmony(GUID);
 
         public static ConfigEntry<float>
             config_PushCooldown,
@@ -26,7 +31,7 @@ namespace PushCompany
 
         private void Awake()
         {
-            mls = BepInEx.Logging.Logger.CreateLogSource(PluginInfo.PLUGIN_GUID);
+            mls = BepInEx.Logging.Logger.CreateLogSource(GUID);
 
             ConfigSetup();
             LoadBundle();
