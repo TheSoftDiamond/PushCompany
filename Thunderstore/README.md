@@ -4,3 +4,5 @@ A Lethal Company mod that lets you push your fellow crewmates with the interacti
 Comes with configurations for Push Force, Push Range, Push Energy Cost, and Push Cooldown.
 
 Make sure that everyone has the mod or they won't be able to join the host!
+
+Maintained by SoftDiamond. Updated to V73 of Lethal Company!
